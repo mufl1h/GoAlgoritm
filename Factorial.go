@@ -6,7 +6,14 @@ import (
 )
 
 func main(){
-	fmt.Println(factorial(0))
+	var n int
+	fmt.Print("Input n! : ")
+	_, err := fmt.Scanf("%d", &n)
+	if(err != nil){
+		fmt.Println(err)
+	}
+	fmt.Println(n, "!")
+	fmt.Println(factorial(n))
 }
 
 func factorial(n int) float64 {
@@ -14,9 +21,9 @@ func factorial(n int) float64 {
 	for i:=1; i <= n; i ++ {
 		result *= (float64)(i)
 		if(i < n){
-			fmt.Print(i, "x")
+			fmt.Print(i, " x ")
 		}else{
-			fmt.Print(i, "=")
+			fmt.Print(i, " = ")
 		}
 	}	
 	return result
